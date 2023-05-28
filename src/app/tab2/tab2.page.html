@@ -6,9 +6,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-text-center container">
   <ion-input  label="Ingresa un Item"  class="ion-padding-top" clearInput="" #data label-placement="floating"  fill="outline" placeholder="Nombre del Item"></ion-input>
   <ion-button color="secondary" [disabled]="data.value == ''" (click)="AddItem(data)" class="ion-margin-top">
-    <ion-icon slot="icon-only"  name="bag-add-sharp"></ion-icon> Añadir
+    <ion-icon slot="icon-only"  name="bag-add-sharp"></ion-icon><span class="item">Añadir Item</span>
   </ion-button>
 </ion-content>
