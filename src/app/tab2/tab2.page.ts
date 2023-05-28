@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ApiItemService } from '../servicios/api-item.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +10,12 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(private apiItemService:ApiItemService, private router:Router) {}
+
+  AddItem(data:any){
+    this.apiItemService.addItem(data.value);
+    this.router.navigate(['']);
+    data.value = '';
+  }
 
 }
