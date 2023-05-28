@@ -1,5 +1,7 @@
 {
-  "name": "ionic-app-base",
-  "integrations": {},
+  "name": "app_SmartCart+",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
