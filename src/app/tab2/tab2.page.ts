@@ -10,12 +10,31 @@ import { Router } from '@angular/router';
 })
 export class Tab2Page {
 
+  isAlertOpen = false;
+  isAlertOpen2 = false;
+  public alertButtons = ['Aceptar'];
+
   constructor(private apiItemService:ApiItemService, private router:Router) {}
 
   AddItem(data:any){
-    this.apiItemService.addItem(data.value);
-    this.router.navigate(['']);
-    data.value = '';
+    if (data.value && data.value != '') {
+      if (!this.apiItemService.existItem(data.value)) {
+        this.apiItemService.addItem(data.value);
+        data.value = '';
+        this.router.navigate(['']);
+      }else{
+        this.setOpen2(true);
+      }
+    }else{
+      this.setOpen(true);
+    }
   }
 
+  setOpen(isOpen: boolean) {
+    this.isAlertOpen = isOpen;
+  }
+
+  setOpen2(isOpen: boolean){
+    this.isAlertOpen2 = isOpen;
+  }
 }
