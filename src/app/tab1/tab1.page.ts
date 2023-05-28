@@ -8,7 +8,7 @@ import { ApiItemService } from '../servicios/api-item.service';
 })
 export class Tab1Page implements OnInit{
 
-  constructor(private apiItemService:ApiItemService) {}
+  constructor(public apiItemService:ApiItemService) {}
 
   Lista_items:any;
 
@@ -20,6 +20,8 @@ export class Tab1Page implements OnInit{
     this.GetAllItem();
   }
 
-  
+  removeItem(item:string){
+    this.apiItemService.removeItem(item);
+  }
 
 }

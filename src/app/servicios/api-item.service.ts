@@ -10,7 +10,7 @@ export class ApiItemService {
 
 
   constructor() {
-    this._items = ["Arina","Aceite","Tomáte"];
+    this._items = [];
     this._isEmpty = true;
    }
 
